@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>曲の一覧</title>
+</head>
+<body>
+  <h2>登録された曲一覧</h2>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>アーティスト</th>
+    </tr>
+    <% for (let song of data) { %>
+      <tr>
+        <td><%= song.id %></td>
+        <td><%= song.title %></td>
+        <td><%= song.artist %></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>

@@ -4,6 +4,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
 
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
@@ -143,6 +144,32 @@ app.get("/keiyo2/:number", (req, res) => {
   const detail = station2[number]; 
   res.render('keiyo2_detail', { data: detail }); 
 });
+
+
+// 曲データ（最初のサンプル）
+let songs = [
+  { id: 1, title: "Kill V. Maim", artist: "Grimes" },
+  { id: 2, title: "silent", artist: "SEKAI NO OWARI" },
+];
+
+// 曲一覧を表示する
+app.get("/songs", (req, res) => {
+  res.render("songs_list", { data: songs });
+});
+
+// 曲を追加する
+app.get("/songs_add", (req, res) => {
+  let id = req.query.id;
+  let title = req.query.title;
+  let artist = req.query.artist;
+
+  let newSong = { id: id, title: title, artist: artist };
+  songs.push(newSong);
+
+  res.render("songs_list", { data: songs });
+});
+
+
 
 
 

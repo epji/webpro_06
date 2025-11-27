@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>曲を追加する</title>
+</head>
+<body>
+  <h2>曲の登録</h2>
+  <form action="/songs_add">
+    <label for="id">ID</label>
+    <input type="number" name="id" id="id" required>
+
+    <label for="title">タイトル</label>
+    <input type="text" name="title" id="title" required>
+
+    <label for="artist">アーティスト</label>
+    <input type="text" name="artist" id="artist" required>
+
+    <input type="submit" value="登録">
+  </form>
+</body>
+</html>
