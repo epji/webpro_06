@@ -599,6 +599,15 @@
     font-size: 14px;
   }
   
+  .games-form input,
+  .games-form textarea,
+  .games-form select{
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+
   .games-form textarea{
     min-height: 110px;
     resize: vertical;

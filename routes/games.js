@@ -149,7 +149,7 @@ router.post("/:id/update", (req, res) => {
   game.notes = req.body.notes;
   game.image = req.body.image || "";
 
-  res.redirect("/games/" + game.id);
+  res.redirect("/games");
 });
 
 // 削除 POST
