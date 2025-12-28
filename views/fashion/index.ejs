@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ファッション記録一覧</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="fashion-page">
+
+    <header class="fashion-hero">
+      <h1>セカンドハンドファッション記録</h1>
+      <p class="sub">
+        画像を中心に一覧表示し、クリックで詳細を確認
+      </p>
+
+      <div class="fashion-actions">
+        <a class="fashion-btn primary" href="/fashion/new">
+          ＋ 新規追加
+        </a>
+      </div>
+    </header>
+
+    <div class="fashion-masonry">
+      <% fashion.forEach(item => { %>
+        <article class="fashion-card">
+
+          <!-- Card is clickable → detail page -->
+          <a class="fashion-cardLink" href="/fashion/<%= item.id %>">
+
+            <div class="fashion-imgWrap">
+              <% if (item.image && item.image.trim() !== "") { %>
+                <img src="<%= item.image %>" alt="<%= item.item %>">
+              <% } else { %>
+                <div class="fashion-imgPlaceholder">No Image</div>
+              <% } %>
+
+              <% if (item.rating) { %>
+                <div class="fashion-rating <%= item.rating >= 4 ? 'gold' : '' %>">
+                  ★ <%= item.rating %>
+                </div>
+              <% } %>
+            </div>
+
+            <div class="fashion-info">
+              <div class="fashion-item"><%= item.item %></div>
+              <div class="fashion-meta">
+                <span class="pill"><%= item.brand %></span>
+                <span class="pill">¥<%= item.price %></span>
+              </div>
+            </div>
+
+          </a>
+
+        </article>
+      <% }) %>
+    </div>
+
+  </div>
+</body>
+</html>

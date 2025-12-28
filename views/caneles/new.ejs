@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>カヌレ新規記録追加</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="caneles-page">
+    <div class="caneles-hero">
+      <h1>＋ カヌレ新規記録追加</h1>
+      <p class="sub">必要項目を入力して追加してください。</p>
+    </div>
+
+    <div class="caneles-formWrap">
+      <form action="/caneles" method="POST" class="caneles-form">
+        <div class="caneles-formGrid2">
+          <div>
+            <label>ショップ</label>
+            <input type="text" name="shop" required>
+          </div>
+          <div>
+            <label>エリア</label>
+            <input type="text" name="area" required>
+          </div>
+        </div>
+
+        <div class="caneles-formGrid2">
+          <div>
+            <label>価格（円）</label>
+            <input type="number" name="price" required>
+          </div>
+          <div>
+            <label>フレーバー</label>
+            <input type="text" name="flavor" required>
+          </div>
+        </div>
+
+        <div class="caneles-formGrid2">
+          <div>
+            <label>外カリ（1〜10）</label>
+            <input type="number" name="crunch" min="1" max="10" required>
+          </div>
+          <div>
+            <label>中しっとり（1〜10）</label>
+            <input type="number" name="softness" min="1" max="10" required>
+          </div>
+        </div>
+
+        <div class="caneles-formGrid2">
+          <div>
+            <label>甘さ</label>
+            <input type="text" name="sweetness" required>
+          </div>
+          <div>
+            <label>総合スコア（1〜10）</label>
+            <input type="number" name="score" min="1" max="10" required>
+          </div>
+        </div>
+
+        <label>フレーバーメモ</label>
+        <textarea name="notes"></textarea>
+
+        <label>コメント</label>
+        <textarea name="comment"></textarea>
+
+        <div class="caneles-footerActions">
+          <a href="/caneles" class="caneles-btn">戻る</a>
+          <button type="submit" class="caneles-btn primary">追加</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

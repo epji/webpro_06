@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= item.item %> の詳細</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="fashion-page">
+
+    <header class="fashion-hero">
+      <h1><%= item.item %></h1>
+      <p class="sub"><%= item.brand %> / <%= item.platform %></p>
+
+      <div class="fashion-actions">
+        <a class="fashion-btn" href="/fashion">← 一覧へ</a>
+        <a class="fashion-btn" href="/fashion/<%= item.id %>/edit">編集</a>
+
+        <form action="/fashion/<%= item.id %>/delete" method="POST" style="margin:0;">
+          <button
+            class="fashion-btn danger"
+            type="submit"
+            onclick="return confirm('このアイテムを削除しますか？');"
+          >
+            削除
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <section class="fashion-detailCard">
+      <div class="fashion-detailGrid">
+
+        <!-- Image -->
+        <div class="fashion-detailImage">
+          <% if (item.image && item.image.trim() !== "") { %>
+            <img src="<%= item.image %>" alt="<%= item.item %>">
+          <% } else { %>
+            <div class="fashion-imgPlaceholder big">No Image</div>
+          <% } %>
+        </div>
+
+        <!-- Info -->
+        <div class="fashion-detailInfo">
+          <div class="row">
+            <span>ブランド</span>
+            <strong><%= item.brand %></strong>
+          </div>
+
+          <div class="row">
+            <span>購入元</span>
+            <strong><%= item.platform %></strong>
+          </div>
+
+          <div class="row">
+            <span>状態</span>
+            <strong><%= item.condition %></strong>
+          </div>
+
+          <div class="row">
+            <span>価格</span>
+            <strong>¥<%= item.price %></strong>
+          </div>
+
+          <div class="row">
+            <span>満足度</span>
+            <strong>
+              <%= item.rating ? ("★ " + item.rating) : "（未入力）" %>
+            </strong>
+          </div>
+
+          <div class="block">
+            <div class="label">コメント</div>
+            <div class="text">
+              <%= item.comment && item.comment.trim() !== "" ? item.comment : "（なし）" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

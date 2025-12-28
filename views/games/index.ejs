@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゲームコレクション一覧</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="games-page">
+    <div class="games-hero">
+      <h1>ゲームコレクション</h1>
+      <p class="sub">
+        ゲームをカード形式で一覧表示します。タイトルをクリックすると詳細を確認できます。
+        評価は ★1〜★5（未設定の場合は “–”）で表示されます。
+      </p>
+    </div>
+
+    <div class="games-actions">
+      <a href="/games/new" class="games-btn primary">
+        <span class="plus">＋</span> 新規追加
+      </a>
+    </div>
+
+    <div class="games-grid">
+      <% games.forEach(function(game){ %>
+        <div class="games-card">
+          <a href="/games/<%= game.id %>">
+            <div class="games-poster">
+              <% if (game.image && game.image.trim() !== "") { %>
+                <img src="<%= game.image %>" alt="<%= game.title %>">
+              <% } else { %>
+                <div class="img-placeholder">No Image</div>
+              <% } %>
+            </div>
+
+            <div class="games-body">
+              <h3 class="games-title"><%= game.title %></h3>
+
+              <div class="games-stars <%= game.rating ? ('r' + game.rating) : 'r0' %>">
+                <%= game.rating ? "★".repeat(game.rating) : "" %>
+                <% if (!game.rating) { %><span class="muted">–</span><% } %>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

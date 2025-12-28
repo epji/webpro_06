@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* =========================
+   CANELES: Cafe / Pastry UI (scoped)
+   ========================= */
+
+   .caneles-page{
+    max-width: 1100px;
+    margin: 42px auto;
+    padding: 0 18px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+    color: #1b1b1b;
+  }
+  
+  .caneles-hero{
+    border-radius: 18px;
+    padding: 18px 18px;
+    margin-bottom: 18px;
+    background:
+      radial-gradient(900px 420px at 10% 0%, rgba(210, 140, 80, 0.22), transparent 55%),
+      radial-gradient(900px 420px at 90% 0%, rgba(120, 60, 30, 0.16), transparent 55%),
+      linear-gradient(135deg, rgba(255, 250, 244, 0.98), rgba(247, 232, 218, 0.92));
+    border: 1px solid rgba(80, 40, 10, 0.10);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.07);
+  }
+  
+  .caneles-hero h1{
+    margin: 0 0 6px;
+    font-size: 34px;
+    letter-spacing: 0.2px;
+  }
+  
+  .caneles-hero .sub{
+    margin: 0;
+    line-height: 1.65;
+    color: rgba(0,0,0,0.72);
+  }
+  
+  .caneles-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 14px 0 18px;
+    flex-wrap: wrap;
+  }
+  
+  .caneles-btn, .caneles-btn:visited{
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.9);
+    color: #1b1b1b;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  }
+  
+  .caneles-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.09);
+  }
+  
+  .caneles-btn.primary{
+    background: linear-gradient(135deg, #c97a3a, #7a3f1b);
+    border: none;
+    color: #fff;
+  }
+  
+  .caneles-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .caneles-card{
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .caneles-top{
+    padding: 14px 14px 12px;
+    background: linear-gradient(135deg, rgba(255, 246, 237, 1), rgba(250, 232, 217, 0.92));
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .caneles-title{
+    margin: 0 0 6px;
+    font-weight: 1000;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  
+  .caneles-title a{
+    color: #6b2f10;
+    text-decoration: none;
+  }
+  
+  .caneles-title a:hover{
+    text-decoration: underline;
+  }
+  
+  .caneles-meta{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(0,0,0,0.70);
+  }
+  
+  .caneles-pill{
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .caneles-body{
+    padding: 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .caneles-scoreRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .caneles-score{
+    font-weight: 1000;
+    font-size: 14px;
+    color: #1b1b1b;
+  }
+  
+  .caneles-score strong{
+    font-size: 18px;
+    color: #7a3f1b;
+  }
+  
+  .caneles-bars{
+    display: grid;
+    gap: 8px;
+  }
+  
+  .caneles-barLabel{
+    font-size: 13px;
+    color: rgba(0,0,0,0.70);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .caneles-bar{
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .caneles-bar > span{
+    display: block;
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #c97a3a, #7a3f1b);
+  }
+  
+  .caneles-comment{
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(0,0,0,0.74);
+  }
+  
+  
+  
+  .caneles-formWrap{
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+  .caneles-form{
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+  }
+  
+  .caneles-form label{
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 1000;
+  }
+  
+  .caneles-form input,
+  .caneles-form textarea,
+  .caneles-form select{
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.18);
+    background: #fff;
+    font-size: 14px;
+  }
+  
+  
+  .caneles-form textarea{
+    min-height: 110px;
+    resize: vertical;
+  }
+  
+  .caneles-formGrid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px; /* was 12px */
+  }
+  
+  
+  .caneles-footerActions{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 980px){
+    .caneles-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px){
+    .caneles-grid{ grid-template-columns: 1fr; }
+    .caneles-formGrid2{ grid-template-columns: 1fr; }
+    .caneles-actions, .caneles-footerActions{ flex-direction: column; }
+    .caneles-btn, .caneles-mini{ width: 100%; }
+  }
+
+  /* Simple listing layout */
+.caneles-grid--simple{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .caneles-card--simple .caneles-top,
+  .caneles-card--simple .caneles-body{
+    display: none; /* hide old dense blocks if any */
+  }
+  
+  .caneles-cardLink{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .caneles-simpleTop{
+    padding: 16px 16px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background:
+      linear-gradient(135deg, rgba(255, 246, 237, 1), rgba(250, 232, 217, 0.92));
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .caneles-shop{
+    font-weight: 1000;
+    font-size: 15px;
+    color: #6b2f10;
+    line-height: 1.35;
+  }
+  
+  .caneles-flavor{
+    margin-top: 6px;
+    font-weight: 1000;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #1b1b1b;
+  }
+  
+  .caneles-scoreBadge{
+    flex: 0 0 auto;
+    min-width: 76px;
+    border-radius: 14px;
+    padding: 10px 10px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  }
+  
+  .caneles-scoreBadge .num{
+    font-weight: 1000;
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  .caneles-scoreBadge .den{
+    margin-top: 2px;
+    font-weight: 900;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  
+  /* Score color levels */
+  .caneles-scoreBadge.hi{
+    background: linear-gradient(135deg, rgba(207, 154, 74, 0.22), rgba(122, 63, 27, 0.14));
+    border: 1px solid rgba(122, 63, 27, 0.22);
+  }
+  
+  .caneles-scoreBadge.mid{
+    background: linear-gradient(135deg, rgba(201, 122, 58, 0.18), rgba(0,0,0,0.03));
+  }
+  
+  .caneles-scoreBadge.low{
+    background: rgba(255,255,255,0.92);
+    opacity: 0.92;
+  }
+  
+  /* Hover feel: clean + clickable */
+  .caneles-card--simple:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.08);
+  }
+  
+  @media (max-width: 980px){
+    .caneles-grid--simple{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px){
+    .caneles-grid--simple{ grid-template-columns: 1fr; }
+  }
+  
+  /* === FIX: inputs overflowing/overlapping in 2-col grid === */
+
+  /* intro */
+.canele-intro{
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 20px 24px;
+    background: #fff7f2;
+    border-left: 6px solid #b65c3a;
+    border-radius: 8px;
+  }
+  
+  .canele-intro h2{
+    margin: 0 0 8px;
+    font-size: 1.4rem;
+    color: #5a2d1b;
+  }
+  
+  .canele-intro p{
+    margin: 0;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  /* list */
+  
+
+/* make grid columns actually shrink correctly */
+.caneles-formGrid2{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+  }
+  
+  /* allow children to shrink inside grid cells */
+  .caneles-formGrid2 > div{
+    min-width: 0;
+  }
+  
+  /* ensure inputs never exceed their cell width */
+  .caneles-form input,
+  .caneles-form textarea,
+  .caneles-form select{
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  /* Simple list cards should NOT behave like flex columns */
+.caneles-card--simple{
+  display: block;
+}
+
+
+
+
+
+  
+  
+  /* =========================
+   GAMES: Retro Arcade Neon (scoped)
+   ========================= */
+
+.games-page{
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 18px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  }
+  
+  .games-hero{
+    border-radius: 16px;
+    padding: 18px 18px;
+    margin-bottom: 18px;
+    background: linear-gradient(
+        135deg,
+        #2b2f77,
+        #1b1b2f
+      );      
+    color: #fff;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  
+  .games-hero h1{
+    margin: 0 0 6px;
+    font-size: 34px;
+    letter-spacing: 0.4px;
+  }
+  
+  .games-hero .sub{
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  
+  .games-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 14px 0 18px;
+  }
+  
+  .games-btn, .games-btn:visited{
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    background: rgba(10,10,18,0.78);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  }
+  
+  .games-btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+  }
+  
+  .games-btn.primary{
+    background: linear-gradient(135deg, #3a6cf4, #243a8f);
+    border: none;
+    color: #ffffff;
+  }
+  .games-btn.primary:hover{
+    filter: brightness(1.08);
+  }
+  
+  
+  .games-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .games-card{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  }
+  
+  .games-poster{
+    height: 180px;
+    background:
+      radial-gradient(300px 180px at 20% 30%, rgba(255,0,200,0.35), transparent 60%),
+      radial-gradient(260px 200px at 80% 10%, rgba(0,255,255,0.28), transparent 60%),
+      linear-gradient(135deg, #141423, #25104c);
+    position: relative;
+  }
+  
+  .games-poster img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .games-body{
+    padding: 14px 14px 16px;
+  }
+  
+  .games-title{
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+  
+  .games-title a{
+    color: #2416b8;
+    text-decoration: none;
+  }
+  
+  .games-title a:hover{
+    text-decoration: underline;
+  }
+  
+  .games-stars{
+    font-weight: 1000;
+    letter-spacing: 1px;
+    color: #111;
+  }
+  
+  .games-stars .muted{
+    opacity: 0.55;
+    font-weight: 800;
+  }
+  
+  .games-overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 14px;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.78) 100%);
+    opacity: 0;
+    transition: opacity 0.18s ease-in-out;
+  }
+  
+  .games-card:hover .games-overlay{
+    opacity: 1;
+  }
+  
+  .games-ops{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .games-mini,
+  .games-mini:visited{
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(12,12,18,0.78);
+    color: #fff;
+  }
+  
+  .games-mini:hover{
+    filter: brightness(1.05);
+  }
+  
+  .games-mini.danger{
+    background: rgba(255, 40, 120, 0.75);
+    border: 1px solid rgba(255,255,255,0.16);
+  }
+  
+  .games-form{
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  }
+  
+  .games-form label{
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 900;
+  }
+  
+  .games-form input,
+  .games-form textarea,
+  .games-form select{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.18);
+    background: #fff;
+    font-size: 14px;
+  }
+  
+  .games-form textarea{
+    min-height: 110px;
+    resize: vertical;
+  }
+  
+  .games-footer-actions{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  @media (max-width: 980px){
+    .games-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px){
+    .games-grid{ grid-template-columns: 1fr; }
+    .games-actions, .games-footer-actions{ flex-direction: column; }
+    .games-btn{ text-align: center; }
+  }
+  
+  /* + icon animation */
+.games-btn.primary .plus{
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: 1000;
+    transform: translateY(-1px);
+    transition: transform 0.18s ease, text-shadow 0.18s ease;
+  }
+  
+  .games-btn.primary:hover .plus{
+    transform: translateY(-1px) rotate(90deg) scale(1.06);
+    text-shadow: 0 0 10px rgba(255,255,255,0.35);
+  }
+
+  /* rating colors */
+.games-stars.r0 { color: #111; }                 /* dash stays normal */
+.games-stars.r1 { color: rgba(0,0,0,0.45); }
+.games-stars.r2 { color: rgba(0,0,0,0.55); }
+.games-stars.r3 { color: #2b2b2b; }
+
+.games-stars.r4 { color: #b8860b; }              /* gold-ish */
+.games-stars.r5 { color: #d4af37; }              /* richer gold */
+
+
+/* =========================
+   FASHION: Masonry (CSS-only)
+   ========================= */
+
+   .fashion-page{
+    max-width: 1100px;
+    margin: 42px auto;
+    padding: 0 18px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+    color: #111;
+  }
+  
+  .fashion-hero{
+    border-radius: 18px;
+    padding: 18px 18px;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, rgba(245,245,245,0.95), rgba(235,235,235,0.92));
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+  }
+  
+  .fashion-hero h1{ margin: 0 0 6px; font-size: 30px; }
+  .fashion-hero .sub{ margin: 0; opacity: 0.75; line-height: 1.6; }
+  
+  .fashion-actions{
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  
+  .fashion-btn, .fashion-btn:visited{
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 900;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.9);
+    color: #111;
+  }
+  
+  .fashion-btn.primary{
+    background: #111;
+    color: #fff;
+    border: none;
+  }
+  
+  .fashion-btn.danger{
+    background: rgba(255,235,235,0.95);
+    border: 1px solid rgba(200,0,0,0.20);
+  }
+  
+  /* Masonry using CSS columns */
+  .fashion-masonry{
+    column-count: 3;
+    column-gap: 16px;
+  }
+  
+  .fashion-card{
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 16px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+  }
+  
+  .fashion-cardLink{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .fashion-imgWrap{
+    position: relative;
+    width: 100%;
+    background: rgba(0,0,0,0.04);
+  }
+  
+  .fashion-imgWrap img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .fashion-imgPlaceholder{
+    height: 180px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    opacity: 0.55;
+  }
+  
+  .fashion-imgPlaceholder.big{
+    height: 340px;
+  }
+  
+  .fashion-rating{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-weight: 1000;
+    background: rgba(255,255,255,0.90);
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  }
+  
+  .fashion-rating.gold{
+    background: rgba(255, 244, 214, 0.92);
+    border: 1px solid rgba(160, 110, 0, 0.20);
+  }
+  
+  .fashion-info{
+    padding: 14px;
+  }
+  
+  .fashion-item{
+    font-weight: 1000;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  
+  .fashion-meta{
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    opacity: 0.85;
+  }
+  
+  .fashion-meta .pill{
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.06);
+    font-size: 13px;
+  }
+  
+  .fashion-ops{
+    display: flex;
+    gap: 10px;
+    padding: 14px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    background: rgba(245,245,245,0.65);
+  }
+  
+  .fashion-mini{
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-weight: 1000;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.92);
+    text-decoration: none;
+    color: #111;
+  }
+  
+  .fashion-mini.danger{
+    background: rgba(255,235,235,0.95);
+    border: 1px solid rgba(200,0,0,0.20);
+  }
+  
+  /* Detail layout */
+  .fashion-detailCard{
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+    padding: 16px;
+  }
+  
+  .fashion-detailGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .fashion-detailImage img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  
+  .fashion-detailInfo .row{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .fashion-detailInfo .row span{ opacity: 0.70; }
+  .fashion-detailInfo .row strong{ font-weight: 1000; }
+  
+  .fashion-detailInfo .block{
+    padding-top: 12px;
+  }
+  
+  .fashion-detailInfo .label{
+    font-weight: 1000;
+    margin-bottom: 6px;
+  }
+  
+  .fashion-detailInfo .text{
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+  
+  /* Forms */
+  .fashion-form{
+    max-width: 760px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+  }
+  
+  .fashion-form *{ box-sizing: border-box; }
+  
+  .fashion-form label{
+    display: block;
+    font-weight: 1000;
+    margin: 12px 0 6px;
+  }
+  
+  .fashion-form input, .fashion-form textarea{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.18);
+    font-size: 14px;
+  }
+  
+  .fashion-form textarea{
+    min-height: 110px;
+    resize: vertical;
+  }
+  
+  .fashion-form .grid2{
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: 12px;
+  }
+  
+  .fashion-form .grid2 > label{ min-width: 0; }
+  
+  .fashion-form .formActions{
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  @media (max-width: 980px){
+    .fashion-masonry{ column-count: 2; }
+    .fashion-detailGrid{ grid-template-columns: 1fr; }
+  }
+  
+  @media (max-width: 640px){
+    .fashion-masonry{ column-count: 1; }
+    .fashion-actions{ flex-direction: column; }
+    .fashion-btn{ width: 100%; text-align: center; }
+    .fashion-form .grid2{ grid-template-columns: 1fr; }
+  }
+
+  /* =========================
+   FASHION COLOR OVERRIDE
+   ========================= */
+
+:root{
+    --fashion-bg: #f6f6f4;
+    --fashion-dark: #111111;
+    --fashion-accent: #c5161d; /* change this if you want */
+    --fashion-gold: #c8a100;
+  }
+  
+  /* Page background */
+  .fashion-page{
+    background: var(--fashion-bg);
+  }
+  
+  /* Hero */
+  .fashion-hero{
+    background: var(--fashion-dark);
+    color: #fff;
+    border: none;
+  }
+  
+  .fashion-hero .sub{
+    opacity: 0.85;
+  }
+  
+  /* Buttons */
+  .fashion-btn{
+    background: #fff;
+    color: var(--fashion-dark);
+    border: 2px solid var(--fashion-dark);
+  }
+  
+  .fashion-btn.primary{
+    background: var(--fashion-accent);
+    color: #fff;
+    border: none;
+  }
+  
+  .fashion-btn.danger{
+    background: transparent;
+    color: var(--fashion-accent);
+    border: 2px solid var(--fashion-accent);
+  }
+  
+  /* Cards */
+  .fashion-card{
+    background: #fff;
+    border: none;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  }
+  
+  .fashion-card:hover{
+    transform: translateY(-4px);
+    transition: 0.2s ease;
+  }
+  
+  /* Item title */
+  .fashion-item{
+    color: var(--fashion-dark);
+  }
+  
+  /* Pills */
+  .fashion-meta .pill{
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  /* Rating */
+  .fashion-rating{
+    background: #fff;
+    color: var(--fashion-dark);
+    border: none;
+  }
+  
+  .fashion-rating.gold{
+    background: var(--fashion-gold);
+    color: #111;
+  }
+  
+  /* Ops bar */
+  .fashion-ops{
+    background: #fafafa;
+  }
+  
+  /* Mini buttons */
+  .fashion-mini{
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.25);
+  }
+  
+  .fashion-mini.danger{
+    color: var(--fashion-accent);
+    border-color: var(--fashion-accent);
+  }
+/* === Card hover motion === */
+.fashion-card{
+    transition:
+      transform 0.28s cubic-bezier(.22,.61,.36,1),
+      box-shadow 0.28s cubic-bezier(.22,.61,.36,1);
+  }
+  
+  .fashion-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.16);
+  }
+/* === Image zoom on hover === */
+.fashion-imgWrap{
+    overflow: hidden;
+  }
+  
+  .fashion-imgWrap img{
+    transition: transform 0.6s ease;
+  }
+  
+  .fashion-card:hover .fashion-imgWrap img{
+    transform: scale(1.06);
+  }
+/* === Rating badge pop === */
+.fashion-rating{
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .fashion-card:hover .fashion-rating{
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  }
+/* === Text emphasis === */
+.fashion-item{
+    transition: letter-spacing 0.25s ease;
+  }
+  
+  .fashion-card:hover .fashion-item{
+    letter-spacing: 0.3px;
+  }
+/* === Button interaction === */
+.fashion-btn,
+.fashion-mini{
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.fashion-btn:hover,
+.fashion-mini:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.fashion-btn:active,
+.fashion-mini:active{
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* === Page fade-in === */
+.fashion-page{
+    animation: fashionFade 0.5s ease both;
+  }
+  
+  @keyframes fashionFade{
+    from{
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ===== Fade-in animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fashion-hero {
+  text-align: center;
+  margin: 40px 0 50px;
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.fashion-hero h1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.fashion-hero .sub {
+  font-size: 0.95rem;
+  color: #666;
+  animation: fadeUp 1.1s ease-out both;
+}
+
+.fashion-page {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.fashion-hero .sub {
+  font-size: 0.9rem;
+  color: #b2b2b2;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e5e5;
+  display: inline-block;
+}

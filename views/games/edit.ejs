@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゲーム編集</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="games-page">
+    <div class="games-hero">
+      <h1>✏️ ゲーム編集</h1>
+      <p class="sub"><%= game.title %></p>
+    </div>
+
+    <form action="/games/<%= game.id %>/update" method="POST" class="games-form">
+      <label>タイトル</label>
+      <input type="text" name="title" value="<%= game.title %>" required>
+
+      <label>プラットフォーム</label>
+      <input type="text" name="platform" value="<%= game.platform %>" required>
+
+      <label>ジャンル</label>
+      <input type="text" name="genre" value="<%= game.genre %>" required>
+
+      <label>プレイ状況</label>
+      <select name="played">
+        <option value="true" <%= game.played ? "selected" : "" %>>プレイ済み</option>
+        <option value="false" <%= !game.played ? "selected" : "" %>>未プレイ</option>
+      </select>
+
+      <label>評価 (1〜5 / 任意)</label>
+      <input type="number" name="rating" value="<%= game.rating %>" min="1" max="5">
+
+      <label>画像URL (任意)</label>
+      <input type="text" name="image" value="<%= game.image ? game.image : "" %>" placeholder="https://.../cover.jpg">
+
+      <label>メモ</label>
+      <textarea name="notes"><%= game.notes %></textarea>
+
+      <div class="games-footer-actions">
+        <a href="/games/<%= game.id %>" class="games-btn">戻る</a>
+        <button type="submit" class="games-btn primary">更新</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

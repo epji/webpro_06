@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= game.title %> の詳細</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="games-page">
+    <div class="games-hero">
+      <h1><%= game.title %></h1>
+      <p class="sub"><%= game.platform %> / <%= game.genre %></p>
+    </div>
+
+    <div class="games-form">
+      <% if (game.image && game.image.trim() !== "") { %>
+        <div class="games-poster" style="height:240px; border-radius:14px; overflow:hidden; margin-bottom:14px;">
+          <img src="<%= game.image %>" alt="<%= game.title %>">
+        </div>
+      <% } %>
+
+      <p><strong>プレイ状況：</strong> <%= game.played ? "プレイ済み" : "未プレイ" %></p>
+
+      <p><strong>評価：</strong>
+        <span class="games-stars <%= game.rating ? ('r' + game.rating) : 'r0' %>">
+          <%= game.rating ? "★".repeat(game.rating) : "–" %>
+        </span>
+      </p>
+
+      <p><strong>メモ：</strong><br>
+        <%= game.notes && game.notes.trim() !== "" ? game.notes : "（なし）" %>
+      </p>
+
+      <div class="games-footer-actions">
+        <a href="/games" class="games-btn">一覧へ</a>
+        <a href="/games/<%= game.id %>/edit" class="games-btn">編集</a>
+
+        <form
+          action="/games/<%= game.id %>/delete"
+          method="POST"
+          style="margin:0;"
+          onsubmit="return confirm('このゲームを削除してもよろしいですか？');"
+        >
+          <button
+            type="submit"
+            class="games-btn"
+            style="background: rgba(255,40,120,0.75); border: 1px solid rgba(255,255,255,0.16);"
+          >
+            削除
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

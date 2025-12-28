@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>京葉線駅 新規登録</title>
+</head>
+<body>
+  <h2>京葉線駅 新規登録</h2>
+
+  <form action="/keiyo2" method="POST">
+    <label for="code">code:</label><br>
+    <input type="text" id="code" name="code" required><br>
+
+    <label for="name">name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="change">change:</label><br>
+    <input type="text" id="change" name="change"><br>
+
+    <label for="passengers">passengers:</label><br>
+    <input type="text" id="passengers" name="passengers" required><br>
+
+    <label for="distance">distance:</label><br>
+    <input type="text" id="distance" name="distance" required><br>
+
+    <input type="submit" value="登録">
+  </form>
+</body>
+</html>

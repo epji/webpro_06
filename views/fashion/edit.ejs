@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>編集：<%= item.item %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="fashion-page">
+    <header class="fashion-hero">
+      <h1>✏️ 編集：<%= item.item %></h1>
+      <p class="sub">ID: <%= item.id %></p>
+      <div class="fashion-actions">
+        <a class="fashion-btn" href="/fashion">← 一覧へ</a>
+        <a class="fashion-btn" href="/fashion/<%= item.id %>">詳細へ</a>
+      </div>
+    </header>
+
+    <form action="/fashion/<%= item.id %>/update" method="POST" class="fashion-form">
+      <div class="grid2">
+        <label>アイテム名
+          <input type="text" name="item" value="<%= item.item %>" required>
+        </label>
+        <label>ブランド
+          <input type="text" name="brand" value="<%= item.brand %>">
+        </label>
+      </div>
+
+      <div class="grid2">
+        <label>購入元
+          <input type="text" name="platform" value="<%= item.platform %>">
+        </label>
+        <label>状態
+          <input type="text" name="condition" value="<%= item.condition %>">
+        </label>
+      </div>
+
+      <div class="grid2">
+        <label>価格（円）
+          <input type="number" name="price" value="<%= item.price %>">
+        </label>
+        <label>満足度（1〜5）
+          <input type="number" name="rating" min="1" max="5" value="<%= item.rating %>">
+        </label>
+      </div>
+
+      <label>画像URL（直リンク）
+        <input type="url" name="image" value="<%= item.image %>" placeholder="https://i.imgur.com/xxxxxx.jpg">
+      </label>
+
+      <label>コメント
+        <textarea name="comment"><%= item.comment %></textarea>
+      </label>
+
+      <div class="formActions">
+        <button type="submit" class="fashion-btn primary">更新</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

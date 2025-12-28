@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>カヌレ記録一覧</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="caneles-page">
+    <div class="caneles-hero">
+      <h1>カヌレ記録</h1>
+      <p class="sub">一覧はシンプルに表示し，クリックで詳細ページを確認する。</p>
+    </div>
+
+    <section class="canele-intro">
+      <h2>カヌレとは？</h2>
+      <p>
+        カヌレ（Canelé）はフランス・ボルドー地方発祥の焼き菓子で，
+        外側はカリッと香ばしく，中はプリンのようにしっとりした食感が特徴である。
+        本システムでは，店舗ごとのカヌレを実食レビューに基づいて記録・評価する。
+      </p>
+    </section>
+
+    <div class="caneles-actions">
+      <a href="/caneles/new" class="caneles-btn primary">＋ 新規追加</a>
+    </div>
+
+    <div class="caneles-grid caneles-grid--simple">
+      <% caneles.forEach(function(c){ %>
+        <div class="caneles-card caneles-card--simple">
+          <a class="caneles-cardLink" href="/caneles/<%= c.id %>">
+            <div class="caneles-simpleTop">
+              <div class="caneles-name">
+                <div class="caneles-shop"><%= c.shop %></div>
+                <div class="caneles-flavor"><%= c.flavor %></div>
+              </div>
+
+              <div class="caneles-scoreBadge <%= c.score >= 8 ? 'hi' : (c.score >= 6 ? 'mid' : 'low') %>">
+                <div class="num"><%= c.score %></div>
+                <div class="den">/10</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

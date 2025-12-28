@@ -1,5 +1,5 @@
 # 開発者向け仕様書（仮）  
-カヌレショップ紹介・評価システム
+# カヌレショップ紹介・評価システム
 
 ## 1. システム概要
 
@@ -55,16 +55,17 @@ let caneles = [
 プロパティの意味：
 
 - **id** : レコードの一意の識別子（自動採番）  
-- **name** : 店名  
-- **location** : 場所  
+- **shop** : 店名  
+- **area** : 場所  
 - **price** : 価格（円）  
 - **flavor** : フレーバー名  
-- **outerCrunch** : 外側のカリカリ度（1〜10）  
-- **innerSoftness** : 内側のやわらかさ（1〜10）  
-- **sweetness** : 甘さの傾向（文字列）  
-- **flavorNotes** : 風味メモ  
+- **crunch** : 外側のカリカリ度（1〜10）  
+- **softness** : 内側のやわらかさ（1〜10）  
+- **sweetness** : 甘さの傾向  
+- **notes** : 風味メモ  
 - **score** : 総合評価  
-- **comments** : コメント・食後の印象  
+- **comment** : コメント・食後の印象  
+ 
 
 
 ## 3. REST API 仕様
@@ -219,3 +220,145 @@ stateDiagram-v2
 - フレーバー・甘さ・カリカリ度などのフィルタ機能  
 - スコア順ソート  
 - JSON によるデータ永続化  
+
+# ゲームコレクション管理システム
+
+## 1. システム概要
+
+本システムは，ユーザーが自身のゲームコレクションを記録・管理するシステムである。各ゲームに対して，タイトル名，プラットフォーム，ジャンル，プレイ状況，評価，メモを登録し，CRUD操作が可能である。
+
+## 2. データ構造
+
+```javascript
+let games = [
+  {
+    id: 1,
+    title: "ゼルダの伝説 ブレス オブ ザ ワイルド",
+    platform: "Nintendo Switch",
+    genre: "アクションアドベンチャー",
+    played: true,
+    rating: 5,
+    notes: "探索が自由で面白い！"
+  },
+  {
+    id: 2,
+    title: "ペルソナ5 ロイヤル",
+    platform: "PlayStation 4",
+    genre: "JRPG",
+    played: false,
+    rating: null,
+    notes: "冬休みにプレイ予定"
+  }
+];
+```
+
+## 3. REST API 仕様
+
+* `GET /games`
+* `GET /games/:id`
+* `GET /games/new`
+* `POST /games`
+* `GET /games/:id/edit`
+* `POST /games/:id/update`
+* `POST /games/:id/delete`
+
+## 4. ページ構造
+
+* `/games` — 一覧ページ
+* `/games/:id` — 詳細ページ
+* `/games/new` — 新規追加フォーム
+* `/games/:id/edit` — 編集フォーム
+
+## 5. ページ遷移図（Mermaid）
+
+```mermaid
+stateDiagram-v2
+    [*] --> 一覧表示
+    一覧表示 --> 詳細表示: タイトルをクリック
+    一覧表示 --> 追加画面: 追加ボタン
+    詳細表示 --> 編集画面: 編集ボタン
+    詳細表示 --> 削除確認: 削除ボタン
+    追加画面 --> 登録: 登録ボタン
+    編集画面 --> 登録: 更新ボタン
+    削除確認 --> 一覧表示: 削除実行
+    登録 --> 一覧表示
+```
+
+## 6. 使用技術
+
+* Node.js / Express
+* EJS
+* HTML / CSS
+
+---
+
+# セカンドハンドファッション記録システム
+
+## 1. システム概要
+
+ユーザーが購入・収集した古着やアクセサリーの記録を管理するシステムである。ブランド名や購入元，価格や商品状態，満足度，コメントを記録できる。
+
+## 2. データ構造
+
+```javascript
+let fashion = [
+  {
+    id: 1,
+    item: "Yohji Yamamoto ジャケット",
+    brand: "Yohji Yamamoto",
+    platform: "Mercari",
+    condition: "Used - Good",
+    price: 9800,
+    rating: 5,
+    comment: "軽いダメージはあるがシルエットが最高"
+  },
+  {
+    id: 2,
+    item: "Tripp NYC パンツ",
+    brand: "Tripp NYC",
+    platform: "Carousell",
+    condition: "Used - Fair",
+    price: 4200,
+    rating: 4,
+    comment: "ジッパー壊れてたけど直したら着やすい"
+  }
+];
+```
+
+## 3. REST API 仕様
+
+* `GET /fashion`
+* `GET /fashion/:id`
+* `GET /fashion/new`
+* `POST /fashion`
+* `GET /fashion/:id/edit`
+* `POST /fashion/:id/update`
+* `POST /fashion/:id/delete`
+
+## 4. ページ構造
+
+* `/fashion` — 一覧ページ
+* `/fashion/:id` — 詳細ページ
+* `/fashion/new` — 新規追加フォーム
+* `/fashion/:id/edit` — 編集フォーム
+
+## 5. ページ遷移図（Mermaid）
+
+```mermaid
+stateDiagram-v2
+    [*] --> 一覧表示
+    一覧表示 --> 詳細表示: アイテム名クリック
+    一覧表示 --> 追加画面: 追加ボタン
+    詳細表示 --> 編集画面: 編集ボタン
+    詳細表示 --> 削除確認: 削除ボタン
+    追加画面 --> 登録: 登録ボタン
+    編集画面 --> 登録: 更新ボタン
+    削除確認 --> 一覧表示: 削除実行
+    登録 --> 一覧表示
+```
+
+## 6. 使用技術
+
+* Node.js / Express
+* EJS
+* HTML / CSS

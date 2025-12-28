@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= canele.shop %> / <%= canele.flavor %> の詳細</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="caneles-page">
+    <div class="caneles-hero">
+      <h1><%= canele.shop %> / <%= canele.flavor %></h1>
+      <p class="sub">
+        エリア：<%= canele.area %> /
+        価格：¥<%= canele.price %> /
+        甘さ：<%= canele.sweetness %>
+      </p>
+    </div>
+
+    <div class="caneles-formWrap">
+      <div class="caneles-form">
+        <p><strong>総合スコア：</strong> <%= canele.score %>/10</p>
+
+        <div class="caneles-bars">
+          <div>
+            <div class="caneles-barLabel">
+              <span>外カリ</span>
+              <span><%= canele.crunch %>/10</span>
+            </div>
+            <div class="caneles-bar">
+              <span style="width:<%= canele.crunch * 10 %>%"></span>
+            </div>
+          </div>
+
+          <div>
+            <div class="caneles-barLabel">
+              <span>中しっとり</span>
+              <span><%= canele.softness %>/10</span>
+            </div>
+            <div class="caneles-bar">
+              <span style="width:<%= canele.softness * 10 %>%"></span>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:14px;">
+          <strong>フレーバーメモ：</strong><br>
+          <%= canele.notes && canele.notes.trim() !== "" ? canele.notes : "（なし）" %>
+        </p>
+
+        <p>
+          <strong>コメント：</strong><br>
+          <%= canele.comment && canele.comment.trim() !== "" ? canele.comment : "（なし）" %>
+        </p>
+
+        <div class="caneles-footerActions">
+          <a href="/caneles" class="caneles-btn">一覧へ</a>
+          <a href="/caneles/<%= canele.id %>/edit" class="caneles-btn">編集</a>
+
+          <form
+            action="/caneles/<%= canele.id %>/delete"
+            method="POST"
+            style="margin:0;"
+            onsubmit="return confirm('このカヌレ記録を削除してもよろしいですか？');"
+          >
+            <button
+              type="submit"
+              class="caneles-btn"
+              style="background: rgba(255,235,235,0.95); border: 1px solid rgba(200,0,0,0.20); font-weight: 1000;"
+            >
+              削除
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
