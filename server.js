@@ -3,29 +3,33 @@
 const express = require("express");
 const path = require("path");
 
+// Routers
+const gamesRouter = require("./routes/games");
 const fashionRouter = require("./routes/fashion");
-// later you’ll add:
-// const gamesRouter = require("./routes/games");
-// const canelesRouter = require("./routes/caneles");
+const canelesRouter = require("./routes/caneles");
 
 const app = express();
 const PORT = 8080;
 
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// View engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// mount routers
+// Routes
+app.use("/games", gamesRouter);
 app.use("/fashion", fashionRouter);
-// later:
-// app.use("/games", gamesRouter);
-// app.use("/caneles", canelesRouter);
+app.use("/caneles", canelesRouter);
 
-// optional landing
-app.get("/", (req, res) => res.redirect("/games"));
+// Default redirect
+app.get("/", (req, res) => {
+  res.redirect("/games");
+});
 
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
